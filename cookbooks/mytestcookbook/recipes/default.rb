@@ -6,3 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+package 'git-core' do
+  action :install
+end
