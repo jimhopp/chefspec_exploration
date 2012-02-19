@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'chefspec'
 
 describe 'attributes tests' do
