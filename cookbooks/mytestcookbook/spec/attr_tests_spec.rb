@@ -9,7 +9,7 @@ describe 'attributes tests' do
   end
   it 'can set values for default attributes' do
     runner = ChefSpec::ChefRunner.new do |node|
-      node["mytestcookbook"] = { :attr_a => 'bar' }
+      node.set["mytestcookbook"] = { :attr_a => 'bar' }
     end
     runner.converge 'mytestcookbook::default'
     runner.node.mytestcookbook.attr_a.should eq 'bar'
