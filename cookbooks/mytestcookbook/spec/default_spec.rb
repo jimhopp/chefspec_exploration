@@ -1,9 +1,9 @@
-require 'bundler/setup'                                                         
+require 'bundler/setup'
 require 'chefspec'
 
 describe 'mytestcookbook::default' do
   let (:chef_run) { ChefSpec::ChefRunner.new.converge 'mytestcookbook::default' }
   it 'should always install git-core' do
-    chef_run.should install_package 'git-core'
+    expect(chef_run).to install_package 'git-core'
   end
 end

@@ -10,12 +10,12 @@ describe 'mytestcookbook::lwrp' do
     runner.converge 'mytestcookbook::lwrp'
   }
   it 'should install foo' do
-    chef_run.should install_package 'foo'
+    expect(chef_run).to install_package 'foo'
   end
   it 'executes stuff' do
     cmd = 'echo "hello!"'
     runner.node.set["mytestcookbook"] = { :cmd => cmd }
     runner.converge 'mytestcookbook::lwrp'
-    runner.should execute_command cmd
+    expect(runner).to execute_command cmd
   end
 end
